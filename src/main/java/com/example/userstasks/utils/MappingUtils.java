@@ -20,6 +20,7 @@ public class MappingUtils {
     public UserDTO Map(User user){
         UserDTO dto = new UserDTO();
         dto.setLogin(user.getLogin());
+        dto.setAge(user.getAge());
         dto.setTasks(user.getTaskList().stream().map(t-> this.MapTask(t)).collect(Collectors.toList()));
         return dto;
     }
